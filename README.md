@@ -21,12 +21,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Lighthouse
-        uses: tuktukvlad/lighthouse-ci-action@1.1.2
+        uses: tuktukvlad/lighthouse-ci-action@1.1.3
         with:
           app_id: ${{ secrets.SHOP_APP_ID }}
           app_password: ${{ secrets.SHOP_APP_PASSWORD }}
           store: ${{ secrets.SHOP_STORE }}
           lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          lhci_blocked_url_patterns: ${{ secrets.LHCI_BLOCKED_URL_PATTERNS }}
           lhci_min_score_performance: 0.9
           lhci_min_score_accessibility: 0.9
 ```
@@ -45,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Lighthouse
-        uses: shopify/lighthouse-ci-action@1.0
+        uses: tuktukvlad/lighthouse-ci-action@1.0
         with:
           app_id: ${{ secrets.SHOP_APP_ID }}
           app_password: ${{ secrets.SHOP_APP_PASSWORD }}
@@ -63,7 +64,7 @@ The `shopify/lighthouse-ci-action` accepts the following arguments:
 * `product_handle` - (optional) Product handle to run the product page Lighthouse run on. Defaults to the first product.
 * `theme_root` - (optional) The root folder for the theme files that will be uploaded. Defaults to `.`
 * `collection_handle` - (optional) Collection handle to run the product page Lighthouse run on. Defaults to the first collection.
-* `lhci_blocked_url_patterns` - (optional) URLs of requests to block while loading the page. Basic wildcard support using `*`.
+* `lhci_blocked_url_patterns` - (optional) URLs of requests to block while loading the page. Basic wildcard support using `*`, each pattern on a new line.
 * `lhci_min_score_performance` - (optional, default: 0.6) Minimum performance score for a passed audit (must be between 0 and 1).
 * `lhci_min_score_accessibility` - (optional, default: 0.9) Minimum accessibility score for a passed audit
 
