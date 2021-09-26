@@ -8,7 +8,7 @@
 
 ## Usage
 
-Add `shopify/lighthouse-ci-action` to the workflow of your Shopify theme.
+Add `tuktukvlad/lighthouse-ci-action` to the workflow of your Shopify theme.
 
 ```yml
 # .github/workflows/lighthouse-ci.yml
@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Lighthouse
-        uses: shopify/lighthouse-ci-action@1.0
+        uses: tuktukvlad/lighthouse-ci-action@1.1.2
         with:
           app_id: ${{ secrets.SHOP_APP_ID }}
           app_password: ${{ secrets.SHOP_APP_PASSWORD }}
@@ -33,7 +33,7 @@ jobs:
 
 ## Authentication
 
-Authentication is done with private app credentials. The same ones you'd use with [Theme Kit](https://shopify.dev/tools/theme-kit/getting-started#step-2-generate-api-credentials).
+Authentication is done with private app credentials with scopes `write_themes, read_products`. The same ones you'd use with [Theme Kit](https://shopify.dev/tools/theme-kit/getting-started#step-2-generate-api-credentials).
 
 You will need to provide the `app_id`, `app_password` and `store` as parameters to the GitHub action. It is recommended to set these as [GitHub secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-an-environment) on your repo.
 
