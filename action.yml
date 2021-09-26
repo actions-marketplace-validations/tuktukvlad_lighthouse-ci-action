@@ -34,7 +34,7 @@ inputs:
     description: 'GitHub personal access token'
     required: false
   lhci_blocked_url_patterns:
-    description: 'URL's patterns of requests to block while loading the page'
+    description: 'URL patterns of requests to block while loading the page'
     required: false
   lhci_min_score_performance:
     description: 'Minimum performance score'
