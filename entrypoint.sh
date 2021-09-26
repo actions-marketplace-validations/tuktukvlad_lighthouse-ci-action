@@ -25,6 +25,7 @@
 [[ -n "$INPUT_LHCI_GITHUB_TOKEN" ]]     && export LHCI_GITHUB_TOKEN="$INPUT_LHCI_GITHUB_TOKEN"
 
 # Optional, these are used
+[[ -n "$INPUT_LHCI_BLOCKED_URL_PATTERNS" ]]   && mapfile -t LHCI_BLOCKED_URL_PATTERNS <<< "$INPUT_LHCI_BLOCKED_URL_PATTERNS"
 [[ -n "$INPUT_LHCI_MIN_SCORE_PERFORMANCE" ]]   && export LHCI_MIN_SCORE_PERFORMANCE="$INPUT_LHCI_MIN_SCORE_PERFORMANCE"
 [[ -n "$INPUT_LHCI_MIN_SCORE_ACCESSIBILITY" ]] && export LHCI_MIN_SCORE_ACCESSIBILITY="$INPUT_LHCI_MIN_SCORE_ACCESSIBILITY"
 
@@ -181,6 +182,7 @@ ci:
         - "--disable-setuid-sandbox"
         - "--disable-dev-shm-usage"
         - "--disable-gpu"
+$([[ ! -z "$LHCI_BLOCKED_URL_PATTERNS" ]] && echo "    settings:" && echo "      blockedUrlPatterns:" && for pattern in "${LHCI_BLOCKED_URL_PATTERNS[@]}"; do echo "        - \"$pattern\""; done)
   upload:
     target: temporary-public-storage
   assert:
