@@ -1,4 +1,4 @@
-# shopify/lighthouse-ci-action
+# Run Lighthouse CI on Shopify theme
 
 [About this repo](#about-this-repo) | [Usage](#usage) | [Authentication](#authentication) | [Configuration](#configuration)
 
