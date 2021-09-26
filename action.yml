@@ -1,8 +1,8 @@
 # action.yml
 name: 'Run Lighthouse CI on Shopify theme'
 branding:
-  icon: shopping-bag
-  colour: green
+  icon: 'shopping-cart'
+  color: 'green'
 description: 'Run Lighthouse CI on Shopify themes directly from GitHub'
 inputs:
   app_id:
