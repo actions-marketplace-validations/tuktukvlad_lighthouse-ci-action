@@ -1,5 +1,5 @@
 # action.yml
-name: 'Run Lighthouse CI on Shopify theme'
+name: 'Lighthouse CI on Shopify theme'
 branding:
   icon: 'shopping-cart'
   color: 'green'
