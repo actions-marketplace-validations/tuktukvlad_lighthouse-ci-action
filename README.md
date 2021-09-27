@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Lighthouse
-        uses: tuktukvlad/lighthouse-ci-action@1.1.3
+        uses: tuktukvlad/lighthouse-ci-action@1.1.4
         with:
           app_id: ${{ secrets.SHOP_APP_ID }}
           app_password: ${{ secrets.SHOP_APP_PASSWORD }}
@@ -46,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Lighthouse
-        uses: tuktukvlad/lighthouse-ci-action@1.1.3
+        uses: tuktukvlad/lighthouse-ci-action@1.1.4
         with:
           app_id: ${{ secrets.SHOP_APP_ID }}
           app_password: ${{ secrets.SHOP_APP_PASSWORD }}
@@ -55,7 +55,7 @@ jobs:
 
 ## Configuration
 
-The `shopify/lighthouse-ci-action` accepts the following arguments:
+The `tuktukvlad/lighthouse-ci-action` accepts the following arguments:
 
 * `app_id` - (required) Shopify store private app ID.
 * `app_password` - (required) Shopify store private app password.
